@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="session4_styles.css" type="text/css" />
+    <title>All About Garrett</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing%20Script">
+    <style>
+        h1 {text-align: center; font-family: 'Dancing Script', 'Times New Roman', Times, serif; color: rgb(43, 138, 72);}
+        p {font-style: oblique; font-size: 12pt;text-align: center; color: gold; font-weight: bold; font-size: xx-large; background-color: white;}
+        h6 {text-align: center;}
+        body {background-image: url(nyc.jpg);}
+        img {float: right; width: 600px;}
+        .link {color:gold; background-color: white; font-size: x-large; border: 5px solid rgb(43, 138, 72);}
+        span {border: white dotted 10px;}
+    </style>
+    <script>
+
+        function ChgStyle()
+        {
+         document.getElementById("myh1").style.color="green";
+         document.getElementById("myh1").style.font="30pt 'Comic Sans MS'";
+         document.getElementById("myh1").style.textAlign="center";
+        }
+        function ChgToTanguy()
+	   {
+
+	   		document.getElementById("garrett").src="other.jpg";
+	   } 
+	   function ChgToMe()
+	   {
+	   	
+		document.getElementById("garrett").src="Garrett.png";
+	   } 
+ 
+     </script>	
+</head>
+<body>
+    <h1 style="color: royalblue;" id="myh1" onclick="ChgStyle()">
+        <span>My name is Garrett</span>
+    </h1>
+    <h6>
+    <img id="garrett" src="Garrett.png" alt="Picture of me" onmouseover="ChgToTanguy()" onmouseout="ChgToMe()"/>
+    </h6>
+    <hr>
+    <p>
+        I am from New York City, and you can best reach me at my email gramos1@babson.edu.
+    </p>
+    <hr>
+    <p>
+        <i>
+            Something interesting about myself is that I have a twin brother. <br> I also have two younger sisters who are identical twins.
+        </i>
+       
+    </p>
+    <h6>
+    <a class="link" href="interests.html" target="_blank">My Interests</a>
+    </h6>
+</body>
+</html>
