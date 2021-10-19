@@ -2,23 +2,50 @@
 <html lang="en">
 <head>
 	<title>MIS3690 Survey</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<script>
+		function processForm()
+		{
+			var jsimages=document.getElementById("images")
+			var jscss=document.getElementById("css")
+			var jstables=document.getElementById("tables")
+			var jsforms=document.getElementById("forms")
+			if (jsimages.checked == false && jscss.checked == false && jstables.checked == false && jsforms.checked == false)
+			{
+				alert("Fun topic is required");
+			}
+			else if (document.getElementById("firstname").value=="")
+			{
+				alert("First name is required");
+				document.getElementById("firstname").focus();
+			}
+			else if (document.getElementById("lastname").value=="")
+			{
+				alert("Last name is required");
+				document.getElementById("lastname").focus();
+			}
+			else
+			{
+				return true;
+			}
+			return false;
+		}
+	</script>
 	<style>
 	td {padding-right:10px}
 	ul {list-style-type: none;}
 	</style>
-	
 </head>
 <body>
 	<h1>MIS3690 Student Survey</h1>	
 	<p>Please complete the following survey.  You must answer each question.  When you are done,
 	    please click on the Submit button.</p>
-		<form action="http://wtspring13sec2.babson.edu/gordon/mailer.php">
+		<form method="post" id="form1" onsubmit="return processForm()" action="http://wtspring13sec2.babson.edu/gordon/mailer.php">
 			<p>
 				First Name:
-				<input type="text" name="firstname" maxlength="100" value="" />
+				<input type="text" id ="firstname" name="firstname" maxlength="100" value="" />
 				Last Name:
-				<input type="text" name="lastname" maxlength="100" value="" />
+				<input type="text" id="lastname" name="lastname" maxlength="100" value="" />
 			</p>
 			<p>
 				Gender: Male
@@ -44,19 +71,19 @@
 				<td>
 				<ul>
 					<li>
-				<input type="checkbox" name="images"/>
+				<input id="images" type="checkbox" name="images"/>
 				Images
 				</li>
 				<li>
-				<input type="checkbox" name="CSS"/>
+				<input id="css" type="checkbox" name="CSS"/>
 				CSS
 				</li>
 				<li>
-				<input type="checkbox" name="Tables"/>
+				<input id="tables" type="checkbox" name="Tables"/>
 				Tables
 				</li>
 				<li>
-				<input type="checkbox" name="Forms"/>
+				<input id="forms" type="checkbox" name="Forms"/>
 				Forms
 				</li>
 				</ul>
