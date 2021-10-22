@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 15</title>
+    <style>
+        .m {
+            position: absolute; 
+            top: 0px; 
+            left: 0px; 
+        }
+    </style>
+    <script>
+        var messages = new Array("Click me", "Move me", "Click here", "Button", "Next");
+        var move = document.getElementById("m");
+        
+        function clickMe() {
+            var messNumber = Math.floor(Math.random()*messages.length);
+			document.getElementById("m").innerHTML = messages[messNumber];
+
+
+            var topstyle = Math.floor(Math.random()*500);
+            var leftstyle = Math.floor(Math.random()*500);
+
+            move.style.top = topstyle + "px";
+            move.style.left = leftstyle + "px";
+        }
+    </script>
+</head>
+<body>
+    <button id="m" onclick="clickMe()">Click me</button>
+</body>
+</html>
