@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page2</title>
+    <script>
+
+        function readCookie(cName)
+	{
+		c=document.cookie  //Gets all cookies in the document
+		var s=c.indexOf(cName) //s is the index of the start of the desired cookie
+		if (s==-1) return null;
+		var cs=c.substring(s) //Cut the cookie string at the start of the desired cookie
+		var e=cs.indexOf(";") //e is the index of the end of the desired cookie
+		//If there are multiple cookies, cut off the others
+		if (e != -1) {
+			cs = cs.substring(0,e)
+		}
+		//Find and return the value of the desired cookie
+		cookieParts=cs.split("=")
+		return cookieParts[1]
+	}
+
+    function setCook() {
+        mybody=document.getElementById("bodytag");
+        mybody.
+    }
+
+    </script>
+</head>
+<body onload="readCookie()" id="bodytag">
+    
+</body>
+</html>
