@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="externalstyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Spursy Innit</title>
+<!--My Table which includes a colspan/rowspan can be seen in my page entitled playerratings.html on line 84 for example-->
+<!--My numbered list and sub-list can be seen in my page entitled ucl.html starting on line 80-->
+<!--My image map can be seen in my page entitled matchreports.html on lines 99-100-->
+<!--I included a video in my page entitled aboutme.html on line 82-->
+<!--Background music plays on this page entitled index.html on line 100-->
+
+    <style>
+        body {
+            background-color: rgb(173, 197, 250);
+        }
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid #b3b3b3;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+  font-size: 20px;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(184, 184, 184);
+}
+
+li a.active {
+  color: white;
+  background-color: #23365f;
+}
+    div.pagecontent {
+        margin-left: 15%;
+        margin-right: 10%;
+    }
+    div.gallery {
+        margin: 25px;
+        border: 2px solid #23365f;
+        float: left;
+        width: 25%;
+      }
+      
+      div.gallery:hover {
+        border: 1px solid rgb(255, 255, 255);
+      }
+      
+      div.gallery img {
+        width: 100%;
+        height: 190px;
+      }
+      
+      div.desc {
+        padding: 15px;
+        text-align: center;
+        font-size: 22px;
+        display: none;
+      }
+      img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 100%;
+      }
+      h2 {
+          text-align: center;
+          font-size: 50px;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      
+      </style>
+
+      <script src="https://code.jquery.com/jquery.min.js"></script>
+      <script>
+        $(function() {
+          $("h2").click(function() {
+            $(".pagecontent").slideToggle("slow");
+          });
+        });
+
+        $(function() {
+          $("#prepend").click(function() {
+            $("#aaa").prepend("<b>NEW</b> ");
+          });
+        });
+
+        $(function() {
+          $("#dom").click(function() {
+            $("#old1").remove();
+            $("#old2").remove();
+          });
+        });
+
+        $(function() {
+          $(".desc").mouseover(function() {
+            $(".desc").addClass("yellow");
+          });
+      });
+
+      $(function() {
+        $("#img").mouseover(function() {
+          $("#img").animate({opacity: '0.4'}, "slow")
+        });
+      });
+
+      $(function() {
+        $("#show").click(function() {
+          $(".desc").delay("slow").fadeIn();
+        });
+      });
+      </script>
+      </head>
+      <body>
+        <ul>
+            <li style="font-family: 'Permanent Marker', cursive; font-size: 35px;"><a class="active" href="index.html">Spursy Innit</a></li>
+            <li style="float: right;"><a href="matchreports.html">Match Reports</a></li>
+            <li style="float: right;"><a href="playerratings.html">Player Ratings</a></li>
+            <li style="float: right;"><a href="euro2020.html">Euro 2020</a></li>
+            <li style="float: right;"><a href="ucl.html">UCL Roundup</a></li>
+            <li style="float: right;"><a href="aboutme.html">About Me</a></li>
+            <li style="float: right;"><a href="contact.html">Contact</a></li>
+          </ul>
+          <audio src="sound.mp3" controls></audio>
+          <img id="img" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Tottenham_Hotspur_Stadium_South_Stand.jpg" height="700" alt="THFC Stadium">
+          <br>
+          <br>
+
+      <h2>Recent Posts</h2>
+        <div class="pagecontent">
+      <div class="gallery">
+        <a target="_blank" href="article1.html">
+          <img src="https://images2.minutemediacdn.com/image/fetch/c_fill,g_auto,f_auto,h_2134,w_3200/https%3A%2F%2Fhotspurhq.com%2Fwp-content%2Fuploads%2Fgetty-images%2F2017%2F07%2F1235430277.jpeg" alt="Tanguy Ndombele celebrates goal against Wolves" width="600" height="400">
+        </a>
+        <div class="desc" id="aaa"><a href="article1.html">Match Report & Player Ratings: Wolverhampton Wanderers vs. Tottenham Hotspur - Carabao Cup</a></div>
+      </div>
+      
+      <div class="gallery" id="old1">
+        <a target="_blank" href="article2.html">
+          <img src="https://images2.minutemediacdn.com/image/fetch/w_736,h_485,c_fill,g_auto,f_auto/https%3A%2F%2Ftheprideoflondon.com%2Fwp-content%2Fuploads%2Fgetty-images%2F2017%2F07%2F1332376198-850x560.jpeg" width="600" height="400" alt="player">
+        </a>
+        <div class="desc"><a href="article2.html">Match Report & Player Ratings: Tottenham Hotspur vs. Chelsea</a></div>
+      </div>
+      
+      <div class="gallery" id="old2">
+        <a target="_blank" href="article3.html">
+          <img src="https://cdn.vox-cdn.com/thumbor/NCfOXT_cImey4j2jPWQJ0hY7XpQ=/0x0:3448x2232/1200x800/filters:focal(1385x535:1935x1085)/cdn.vox-cdn.com/uploads/chorus_image/image/69844266/1339647867.0.jpg" width="600" height="400" alt="player">
+        </a>
+        <div class="desc"><a href="article3.html">Match Report & Player Ratings: Crystal Palace vs. Tottenham Hotspur</a></div>
+      </div>
+      </div>
+      <br>
+      <button id="show">Show article descriptions</button>
+      <br>
+      <button id="prepend">See what's new!</button>
+      <button id="dom">Remove old articles</button>
+      <p style="font-size: small; padding-top: 25%;">
+        Sound effects obtained from <a href="https://www.zapsplat.com">zapsplat.com</a>
+      </p>
+</body>
+</html>
