@@ -1,69 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="externalstyles.css" type="text/css">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/> 
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <link rel="stylesheet" href="externalstyles.css">
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <title>Spursy Innit</title>
-<!--My first function, which changes the style of the body's background color in response to a mouseover on my h2, can be found in the script on lines 114-118 of index.html. The mouseover is declared on line 159 of index.html.-->
-<!--I changed the text in my h2 within the same function I described above, on the index.html page on lines 114-118.-->
-<!--My form validation function can be found in the contact.html page on lines 68-100.-->
-<!--My slideshow function is below in the index.html page on lines 120-128.-->
-<!--My js animation (excluding slide show) is in the aboutme.html page on lines 63-72.-->
+<!--My first function, which changes the style of the body's background color in response to a mouseover on my h2, can be found in the script on lines 90-92 of index.html. The mouseover is declared on line 110 of index.html.-->
+<!--I changed the text in my h2 within the same function I described above, on the index.html page on lines 89-93.-->
+<!--My form validation function can be found in the contact.html page on lines 61-93.-->
+<!--My slideshow function is below in the index.html page on lines 98-106.-->
+<!--My js animation (excluding slide show) is in aboutme.html on lines 63-73.-->
 <!--My function which randomly changes an element of the page is located in the euro2020.html page on lines 95-98-->
 
-<!--My first jquery function can be found in the index.html page on lines 127-131. This function reveals the images associated with the articles linked below after clicking on the button that says "Show article featured images"-->
-<!--My second jquery function can be found in the index.html page on lines 134-138. This function highlights the article descriptions in yellow when the user's mouse hovers over the descriptions.-->
-<!--My third jquery function can be found in the playerratings.html page on lines 66-70. This function slides the content of the table up and down when the user clicks on the h1 heading that says, "Tottenham Hotspur Squad 2021/22".-->
-<!--My fourth jquery function can  be found in the contact.html page on lines 102-107. This function adds two new classes to the h2 headings of the page, both enlarging the font, and adding a yellow background to the h2 headings.-->
-
-    <style>
-        body {
-            background-color: rgb(173, 197, 250);
-        }
-  ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  border: 2px solid #b3b3b3;
-  background-color: #ffffff;
-  position: sticky;
-  top: 0;
+<style>
+body {
+ background-color: rgb(173, 197, 250);
 }
-
-li {
-  float: left;
-  font-size: 20px;
-}
-
-li a {
-  display: block;
-  color: #666;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: rgb(184, 184, 184);
-}
-
-li a.active {
-  color: white;
-  background-color: #23365f;
-}
+.Nav_Bar {position: sticky; top: 0px; left: 0px; width: 100%;}
+.Nav_Bar ul {list-style-type: none; margin: 0; padding: 0; overflow: auto; background-color: rgb(27, 32, 99); border-radius: 5px;}
+.Nav_Bar li {float: left;}
+.Nav_Bar li a {display: inline-block; color: white; text-align: center; padding: 15px; text-decoration: none; min-width: 100px; font-weight:lighter;}
+.Nav_Bar a.Active {background-color: darkred;}
+.Nav_Bar li a:hover, .Nav_Bar a.Active:hover {background-color: rgb(141, 141, 141);}
+.Nav_Bar .Dropdown_Content {display: none; position: absolute; background-color: rgb(50, 50, 50); min-width: 100px; z-index: 1; }
+.Nav_Bar .Dropdown_Content a {display: block; text-align: left;}
+.Nav_Bar li.Dropdown:hover .Dropdown_Content {display: block;}
     div.pagecontent {
         margin-left: 15%;
         margin-right: 10%;
     }
     div.gallery {
-        margin: 25px;
-        border: 2px solid #23365f;
-        float: left;
-        width: 25%;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid #23365f;
+        width: 100%;
       }
       
       div.gallery:hover {
@@ -73,41 +50,27 @@ li a.active {
       div.gallery img {
         width: 100%;
         height: 190px;
-        display: none;
       }
       
       div.desc {
         padding: 15px;
         text-align: center;
-        font-size: 22px;
+        font-size: 11px;
       }
       img {
           display: block;
           margin-left: auto;
           margin-right: auto;
           width: 100%;
+          height: 75%;
       }
       h2 {
           text-align: center;
-          font-size: 50px;
+          font-size: 25px;
           font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
-      .yellow {
-        background-color: yellow;
-      }
-      .white {
-        background-color: white;
-      }
       </style>
-    <script src="https://code.jquery.com/jquery.min.js"></script>
       <script>
-//<![CDATA[
-var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
-			if (mobile) {
-				document.location="projectMobile.html"
-			}
-			//]]>
-
         var imageList = new Array ("https://upload.wikimedia.org/wikipedia/commons/c/c7/Tottenham_Hotspur_Stadium_South_Stand.jpg", "https://e0.365dm.com/20/03/2048x1152/skysports-tottenham-hotspur-stadium_4936586.jpg", "https://wallpaperaccess.com/full/3915789.jpg", "https://www.hpe.com/content/dam/hpe/newsroom/2019/04/image-norend/hpe-partners-with-tottenham-hotspur-to-create-unrivaled-fan-experience-at-new-stadium.jpg")
         var counter=0
 
@@ -126,37 +89,31 @@ var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(
           }
           setTimeout("thirdfunc()", 4000)
         }
-
-        $(function() {
-        $("#show").click(function() {
-          $("img").delay("slow").fadeIn();
-        });
-      });
-
-      $(function() {
-          $(".desc").mouseover(function() {
-            $(".desc").addClass("yellow");
-          });
-    });
       </script>
       </head>
       <body id="body" onload="thirdfunc()">
-        <ul>
-            <li style="font-family: 'Permanent Marker', cursive; font-size: 35px;"><a class="active" href="index.html">Spursy Innit</a></li>
-            <li style="float: right;"><a href="matchreports.html">Match Reports</a></li>
-            <li style="float: right;"><a href="playerratings.html">Player Ratings</a></li>
-            <li style="float: right;"><a href="euro2020.html">Euro 2020</a></li>
-            <li style="float: right;"><a href="ucl.html">UCL Roundup</a></li>
-            <li style="float: right;"><a href="aboutme.html">About Me</a></li>
-            <li style="float: right;"><a href="contact.html">Contact</a></li>
-            <li style="float: right;"><a href="credits.html">Credits</a></li>
-          </ul>
-          <audio src="sound.mp3" controls></audio>
+        <div class="Nav_Bar">
+            <ul>
+                <li class="Dropdown">
+                  <a href="projectMobile.html" style="font-family: 'Permanent Marker', cursive; font-size: 25px;">Spursy Innit</a>
+                    <div class="Dropdown_Content">
+                        <a href="euro2020.html">Euro 2020</a>
+                        <a href="playerratings.html">Player Ratings</a>
+                        <a href="matchreports.html">Match Reports</a>
+                        <a href="ucl.html">UCL Roundup</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="aboutme.html">About Me</a>
+                        <a href="credits.html">Credits</a>
+                    </div>
+                </li>
+              </ul>
+        </div>
+          <audio src="sound.mp3" controls style="float: right;"></audio>
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Tottenham_Hotspur_Stadium_South_Stand.jpg" height="700" alt="THFC Stadium" id="image1">
           <br>
           <br>
 
-      <h2 id="recent" onmouseover="firstfunc()">Recent Posts</h2>
+      <h2 id="recent" onmouseover="firstfunc()" >Recent Posts</h2>
         <div class="pagecontent">
       <div class="gallery">
         <a target="_blank" href="article1.html">
@@ -179,9 +136,6 @@ var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(
         <div class="desc"><a href="article3.html">Match Report & Player Ratings: Crystal Palace vs. Tottenham Hotspur</a></div>
       </div>
       </div>
-
-      <button id="show">Show article featured images</button>
-
       <br>
       <p style="font-size: small; padding-top: 25%;">
         Sound effects obtained from <a href="https://www.zapsplat.com">zapsplat.com</a>

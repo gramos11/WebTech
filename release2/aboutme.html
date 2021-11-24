@@ -59,6 +59,18 @@
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 </style>
+<script>
+   var fsize=18;
+	   function fourthfunc() {
+		fsize=fsize+1;
+		myp=document.getElementById("aboutp");
+		myp.style.fontSize=fsize+"px";
+		if (fsize <= 26)
+		{
+		     setTimeout("fourthfunc()",200)
+		}
+	}
+</script>
 </head>
 <body>
     <ul>
@@ -74,7 +86,7 @@
       <h1>About Me</h1>
       <img src="Garrett.PNG" alt="Picture of me">
       <br>
-    <p>
+    <p id="aboutp" onmouseover="fourthfunc()">
         My name is Garrett Ramos. I am originally from New York City, but am currently a Senior at Babson College, located in Wellesley Hills, Massachusetts. After playing travel soccer in New York, I went on to play three years as a member of the Men's Soccer team at Babson College. I have been a Tottenham Hotspur supporter since I was 6 years old, and hope to soon visit the new Tottenham Hotspur Stadium in the near future. You can find my contact information <a href="contact.html" target="_blank">here</a>.
     </p>
     <br>

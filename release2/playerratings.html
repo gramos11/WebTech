@@ -61,6 +61,14 @@ table {
 }
 
     </style>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script>
+      $(function() {
+          $("h1").click(function() {
+            $("table").slideToggle("slow");
+          });
+        });
+    </script>
 </head>
 <body>
     <ul>

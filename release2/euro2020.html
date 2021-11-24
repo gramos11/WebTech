@@ -91,6 +91,12 @@ div.pagecontent {
           font-family: Verdana, Geneva, Tahoma, sans-serif;
       }
 </style>
+<script>
+  var bcolors = new Array ("white", "yellow", "pink")
+  function fifthfunc() {
+    document.getElementById("myp").style.backgroundColor = bcolors[Math.floor(Math.random()*3)];
+  }
+</script>
 </head>
 <body>
     <ul>
@@ -104,8 +110,8 @@ div.pagecontent {
       </ul>
       <h1>Euro 2020</h1>
       <div class="header">
-      <img src="euro2020pic.jpg" class="europic" alt="Euro 2020">
-      <p>Euro 2020 marked one of the most entertaining renditions of the tournament to date. From fantastic goals, to unbelievable upsets, Euro 2020 had it all. Relive the experience by reading some of the articles I wrote throughout the European Championships below.</p>
+      <img src="https://gramos29.files.wordpress.com/2021/07/euro2020.png" class="europic" alt="Euro 2020">
+      <p onclick="fifthfunc()"><span id="myp">Euro 2020 marked one of the most entertaining renditions of the tournament to date. From fantastic goals, to unbelievable upsets, Euro 2020 had it all. Relive the experience by reading some of the articles I wrote throughout the European Championships below.</span></p>
       </div>
       <hr>
       <br>
@@ -113,7 +119,7 @@ div.pagecontent {
         <div class="pagecontent">
       <div class="gallery">
         <a target="_blank" href="euroarticle1.html">
-          <img src="insigne.jpg" width="600" height="400" alt="Italy's Lorenzo Insigne">
+          <img src="https://gramos29.files.wordpress.com/2021/06/insigne-italy-celeb-3.jpg" width="600" height="400" alt="Italy's Lorenzo Insigne">
         </a>
         <div class="desc"><a href="euroarticle1.html">Euro 2020: Matchday One in Review</a></div>
       </div>
